@@ -1,6 +1,7 @@
     <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
     use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,10 @@ use App\Http\Controllers\RegisterController;
     })->name('register');
     Route::get('/login', function () {
     return view('login');
-});
+    });
+    Route::get('/profile',function(){
+        return view('profile');
+    });
 
 
 
@@ -30,6 +34,9 @@ use App\Http\Controllers\RegisterController;
     Route::get('/showregister',[RegisterController::class,'showregister'])->name('showregister');
     Route::get('/showlogin',[LoginController::class,'showLoginform'])->name('showlogin');
     Route::post('/login',[LoginController::class,'login'])->name('login');
+    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile.show');
+    Route::post('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+
 
 
     Route::get('/',function(){

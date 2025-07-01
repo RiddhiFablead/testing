@@ -22,7 +22,9 @@ class LoginController extends Controller
          $user = register::where('email', $request->email)->first();
           if ($user && Hash::check($request->password, $user->password)) {
            Session::put('user',$user->name);
-           return redirect('/');
+           Session::put('id',$user->id);
+           Session::put('email',$user->email);
+           return redirect('/profile');
         }else{
 
         }

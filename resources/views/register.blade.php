@@ -5,7 +5,7 @@
     <div class="card w-75 p-4">
         <h4 class="text-center">Registration Form</h4>
 
-        {{-- Show validation errors --}}
+      
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -39,6 +39,6 @@
 
 @push('scripts')
 <script>
-// Optional JavaScript here
+
 </script>
 @endpush
