@@ -36,6 +36,13 @@ use App\Http\Controllers\RegisterController;
     Route::post('/login',[LoginController::class,'login'])->name('login');
     Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile.show');
     Route::post('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::get('/users', [ProfileController::class, 'showUsers'])->name('users.index');
+    Route::get('/users/{id}/edit', [ProfileController::class, 'editUser'])->name('users.edit');
+    Route::put('/users/{id}', [ProfileController::class, 'updateUser'])->name('users.update'); 
+    Route::delete('/users/{id}', [ProfileController::class, 'destroy'])->name('users.destroy');
+    Route::get('/users/create', [ProfileController::class, 'createUser'])->name('users.create');
+    Route::post('/users', [ProfileController::class, 'storeUser'])->name('users.store');
+
 
 
 
